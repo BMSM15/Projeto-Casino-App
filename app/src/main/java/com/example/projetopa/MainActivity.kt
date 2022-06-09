@@ -1,15 +1,15 @@
 package com.example.projetopa
 
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.snackbar.Snackbar
+import com.example.projetopa.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
