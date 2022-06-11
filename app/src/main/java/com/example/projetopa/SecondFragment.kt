@@ -1,4 +1,4 @@
-package pt.ipg.livros
+package com.example.projetopa
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import pt.ipg.livros.databinding.FragmentSecondBinding
+import com.example.projetopa.databinding.FragmentSecondBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
