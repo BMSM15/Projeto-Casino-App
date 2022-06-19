@@ -9,6 +9,7 @@ class DBOpenHelper(context : Context) : SQLiteOpenHelper(context, "user", null, 
         requireNotNull(db)
 
         TabelaBDJogador(db).cria()
+        TabelaBDRoleta(db).cria()
     }
     /**
      * Called when the database needs to be upgraded. The implementation
