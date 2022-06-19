@@ -24,7 +24,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val sectors = arrayOf(
+    /*private val sectors = arrayOf(
         "32 red", "15 black",
         "19 red", "4 black", "21 red", "2 black", "25 red", "17 black", "34 red",
         "6 black", "27 red", "13 black", "36 red", "11 black", "30 red", "8 black",
@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
     private var degreeOld = 0
     private val HALF_SECTOR = 360f / 37f / 2f
 
+     */
+
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -59,8 +61,8 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        setContentView(R.layout.jogo_roleta);
-        ButterKnife.bind(this);
+        //setContentView(R.layout.jogo_roleta);
+        //ButterKnife.bind(this);
 
     }
 
@@ -86,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
 
-    @OnClick(R.id.spinBtn)
+    /*@OnClick(R.id.spinBtn)
     fun spin(v: View?) {
         degreeOld = degree % 360
         // calculamos o ângulo aleatório para rotação da nossa roda
@@ -133,4 +135,6 @@ class MainActivity : AppCompatActivity() {
         } while (text == null && i < sectors.size)
         return text
     }
+*/
 }
+
