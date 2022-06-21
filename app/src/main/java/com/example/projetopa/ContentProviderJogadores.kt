@@ -64,6 +64,7 @@ class ContentProviderJogadores : ContentProvider() {
         URI_ROLETA -> TabelaBDRoleta(db).query(colunas, selection, argsSeleccao, null, null, sortOrder)
         URI_JOGADOR_ESPECIFICO -> TabelaBDJogador(db).query(colunas, "${BaseColumns._ID}=?", arrayOf("${id}"), null, null, null)
         URI_ROLETA_ESPECIFICA -> TabelaBDRoleta(db).query(colunas, "${BaseColumns._ID}=?", arrayOf("${id}"), null, null, null)
+        URI_MOEDA_AO_AR_ESPECIFICA -> TabelaBDMoedaAoAR(db).query(colunas, "${BaseColumns._ID}=?", arrayOf("${id}"), null, null, null)
         else -> null
         }
         db.close()
@@ -162,8 +163,11 @@ class ContentProviderJogadores : ContentProvider() {
         when (getUriMatcher().match(uri)) {
             URI_JOGADORES -> "$MULTIPLOS_REGISTOS/${TabelaBDJogador.NOME}"
             URI_ROLETA -> "$MULTIPLOS_REGISTOS/${TabelaBDRoleta.NOME}"
+            URI_MOEDA_AO_AR -> "$MULTIPLOS_REGISTOS/${TabelaBDMoedaAoAR.NOME}"
             URI_JOGADOR_ESPECIFICO -> "$UNICO_REGISTO/${TabelaBDJogador.NOME}"
             URI_ROLETA_ESPECIFICA -> "$UNICO_REGISTO/${TabelaBDRoleta.NOME}"
+            URI_MOEDA_AO_AR_ESPECIFICA -> "$UNICO_REGISTO/${TabelaBDMoedaAoAR.NOME}"
+
             else -> null
         }
 
@@ -188,6 +192,7 @@ class ContentProviderJogadores : ContentProvider() {
         val id = when (getUriMatcher().match(uri)) {
             URI_JOGADORES -> TabelaBDJogador(db).insert(values)
             URI_ROLETA -> TabelaBDRoleta(db).insert(values)
+            URI_MOEDA_AO_AR -> TabelaBDMoedaAoAR(db).insert(values)
             else -> -1
         }
 
@@ -229,6 +234,7 @@ class ContentProviderJogadores : ContentProvider() {
         val registosApagados = when (getUriMatcher().match(uri)) {
             URI_JOGADOR_ESPECIFICO -> TabelaBDJogador(db).delete("${BaseColumns._ID}=?", arrayOf("${id}"))
             URI_ROLETA_ESPECIFICA -> TabelaBDRoleta(db).delete("${BaseColumns._ID}=?", arrayOf("${id}"))
+            URI_MOEDA_AO_AR_ESPECIFICA -> TabelaBDMoedaAoAR(db).delete("${BaseColumns._ID}=?", arrayOf("${id}"))
             else -> 0
         }
 
@@ -267,6 +273,7 @@ class ContentProviderJogadores : ContentProvider() {
         val registosAlterados = when (getUriMatcher().match(uri)) {
             URI_JOGADOR_ESPECIFICO -> TabelaBDJogador(db).update(values, "${BaseColumns._ID}=?", arrayOf("${id}"))
             URI_ROLETA_ESPECIFICA -> TabelaBDRoleta(db).update(values,"${BaseColumns._ID}=?", arrayOf("${id}"))
+            URI_MOEDA_AO_AR_ESPECIFICA -> TabelaBDMoedaAoAR(db).update(values,"${BaseColumns._ID}=?", arrayOf("${id}"))
             else -> 0
         }
 
@@ -278,13 +285,20 @@ class ContentProviderJogadores : ContentProvider() {
     companion object {
         const val AUTHORITY = "com.example.projetopa"
 
-        const val URI_ROLETA = 100
-        const val URI_ROLETA_ESPECIFICA = 101
-        const val URI_JOGADORES = 200
-        const val URI_JOGADOR_ESPECIFICO = 201
+        private const val URI_ROLETA = 100
+        private const val URI_ROLETA_ESPECIFICA = 101
+        private const val URI_JOGADORES = 200
+        private const val URI_JOGADOR_ESPECIFICO = 201
+        private const val URI_MOEDA_AO_AR = 300
+        private const val URI_MOEDA_AO_AR_ESPECIFICA = 301
 
-            const val UNICO_REGISTO = "vnd.android.cursor.item"
-            const val MULTIPLOS_REGISTOS = "vnd.android.cursor.dir"
+        private const val UNICO_REGISTO = "vnd.android.cursor.item"
+        private const val MULTIPLOS_REGISTOS = "vnd.android.cursor.dir"
+
+        val ENDERECO_BASE = Uri.parse("content://$AUTHORITY")
+        val ENDERECO_JOGADORES = Uri.withAppendedPath(ENDERECO_BASE, TabelaBDJogador.NOME)
+        val ENDERECO_ROLETA = Uri.withAppendedPath(ENDERECO_BASE, TabelaBDRoleta.NOME)
+        val ENDERECO_MOEDA_AO_AR = Uri.withAppendedPath(ENDERECO_BASE, TabelaBDMoedaAoAR.NOME)
 
         fun getUriMatcher() : UriMatcher {
             var uriMatcher = UriMatcher(UriMatcher.NO_MATCH)
