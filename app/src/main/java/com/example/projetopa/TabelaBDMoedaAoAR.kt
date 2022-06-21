@@ -10,8 +10,11 @@ class TabelaBDMoedaAoAR(db: SQLiteDatabase) : TabelaBD(db, NOME) {
 
     companion object {
         const val NOME = "Dados Moeda ao Ar"
+        const val CAMPO_ID = "$NOME.${BaseColumns._ID}"
         const val CAMPO_ULTIMA_JOGADA = "Ultima jogada"
         const val CAMPO_ACERTOU = "Acertou"
         const val CAMPO_FALHOU = "Falhou"
+
+        val TODAS_COLUNAS = arrayOf(CAMPO_ID, CAMPO_ULTIMA_JOGADA, CAMPO_ACERTOU, CAMPO_FALHOU)
     }
 }

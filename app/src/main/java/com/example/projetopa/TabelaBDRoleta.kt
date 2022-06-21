@@ -10,7 +10,10 @@ class TabelaBDRoleta(db: SQLiteDatabase) : TabelaBD(db, NOME) {
 
     companion object {
         const val NOME = "Dados Roleta"
+        const val CAMPO_ID = "$NOME.${BaseColumns._ID}"
         const val CAMPO_ULTIMO_NUMERO = "Ultimo numero"
         const val CAMPO_JOGADAS = "Jogadas"
+
+        val TODAS_COLUNAS = arrayOf(CAMPO_ID, CAMPO_ULTIMO_NUMERO, CAMPO_JOGADAS)
     }
 }
