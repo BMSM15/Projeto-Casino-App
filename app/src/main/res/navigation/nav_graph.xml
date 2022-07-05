@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/MenuPrincipalFragment"
         android:name="com.example.projetopa.MenuPricipalFragment"
-        android:label="first_fragment_label"
+        android:label="Menu Principal"
         tools:layout="@layout/fragment_menuprincipal">
 
         <action
@@ -18,11 +18,43 @@
     <fragment
         android:id="@+id/ListaJogadoresFragment"
         android:name="com.example.projetopa.ListaJogadoresFragment"
-        android:label="second_fragment_label"
+        android:label="Lista Jogadores"
         tools:layout="@layout/fragment_lista_jogadores">
 
         <action
             android:id="@+id/action_ListaJogadoresFragment_to_MenuPrincipalFragment"
             app:destination="@id/MenuPrincipalFragment" />
+        <action
+            android:id="@+id/action_ListaJogadoresFragment_to_eliminarJogaFragment"
+            app:destination="@id/eliminarJogaFragment" />
+        <action
+            android:id="@+id/action_ListaJogadoresFragment_to_EditarjogaFragment"
+            app:destination="@id/EditarjogaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/EditarjogaFragment"
+        android:name="com.example.projetopa.EditarjogaFragment"
+        android:label="third_fragment_label"
+        tools:layout="@layout/fragment_editar_joga">
+        <action
+            android:id="@+id/action_EditarjogaFragment_to_ListaJogadoresFragment"
+            app:destination="@id/ListaJogadoresFragment" />
+        <argument
+            android:name="jogador"
+            app:argType="com.example.projetopa.Jogador"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/eliminarJogaFragment"
+        android:name="com.example.projetopa.EliminarJogaFragment"
+        android:label="fragment_eliminar_joga"
+        tools:layout="@layout/fragment_eliminar_joga" >
+        <action
+            android:id="@+id/action_eliminarJogaFragment_to_ListaJogadoresFragment"
+            app:destination="@id/ListaJogadoresFragment" />
+        <argument
+            android:name="jogador"
+            app:argType="com.example.projetopa.Jogador" />
     </fragment>
 </navigation>
