@@ -7,7 +7,7 @@ import android.provider.BaseColumns
 
 class TabelaBDRoleta(db: SQLiteDatabase) : TabelaBD(db, NOME) {
     override fun cria() {
-        db.execSQL("CREATE TABLE $nome (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_ULTIMO_NUMERO INTEGER NOT NULL, $CAMPO_JOGADAS INTEGER NOT NULL, $CAMPO_JOGADOR_ID INTEGER NOT NULL, FOREIGN KEY ($CAMPO_JOGADOR_ID) REFERENCES ${TabelaBDJogador.NOME}(${BaseColumns._ID}) ON DELETE RESTRICT) ")
+        db.execSQL("CREATE TABLE $nome (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_ULTIMO_NUMERO INTEGER NOT NULL, $CAMPO_JOGADAS INTEGER NOT NULL, $CAMPO_JOGADOR_ID INTEGER NOT NULL, FOREIGN KEY ($CAMPO_JOGADOR_ID) REFERENCES ${TabelaBDJogador.NOME}(${BaseColumns._ID}) ON DELETE RESTRICT)")
     }
 
     override fun query(
@@ -25,9 +25,9 @@ class TabelaBDRoleta(db: SQLiteDatabase) : TabelaBD(db, NOME) {
     }
 
     companion object {
-        const val NOME = "Dados Roleta"
+        const val NOME = "Dados_Roleta"
         const val CAMPO_ID = "$NOME.${BaseColumns._ID}"
-        const val CAMPO_ULTIMO_NUMERO = "Ultimo numero"
+        const val CAMPO_ULTIMO_NUMERO = "Ultimo_numero"
         const val CAMPO_JOGADAS = "Jogadas"
         const val CAMPO_JOGADOR_ID = "jogadorId"
 

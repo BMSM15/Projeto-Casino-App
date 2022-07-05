@@ -35,7 +35,7 @@ data class Roleta(
 
             val idJogador = cursor.getLong(posIdJoga)
             val nomeJogador = cursor.getString(posNomeJoga)
-            val DinheiroJoga = cursor.getInt(posDinheiroJoga)
+            val DinheiroJoga = cursor.getString(posDinheiroJoga)
             val jogador = Jogador(nomeJogador,DinheiroJoga , idJogador)
 
             return Roleta(Ultimo_numero, Jogadas, jogador, id)

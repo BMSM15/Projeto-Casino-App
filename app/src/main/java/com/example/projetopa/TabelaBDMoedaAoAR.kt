@@ -25,9 +25,9 @@ class TabelaBDMoedaAoAR(db: SQLiteDatabase) : TabelaBD(db, NOME) {
     }
 
     companion object {
-        const val NOME = "Dados Moeda ao Ar"
+        const val NOME = "Dados_Moeda_ao_Ar"
         const val CAMPO_ID = "$NOME.${BaseColumns._ID}"
-        const val CAMPO_ULTIMA_JOGADA = "Ultima jogada"
+        const val CAMPO_ULTIMA_JOGADA = "Ultima_jogada"
         const val CAMPO_ACERTOU = "Acertou"
         const val CAMPO_FALHOU = "Falhou"
         const val CAMPO_JOGADOR_ID = "jogadorId"

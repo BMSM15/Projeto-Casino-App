@@ -39,7 +39,7 @@ data class Moeda_ao_Ar(
 
             val idJogador = cursor.getLong(posIdJoga)
             val nomeJogador = cursor.getString(posNomeJoga)
-            val DinheiroJoga = cursor.getInt(posDinheiroJoga)
+            val DinheiroJoga = cursor.getString(posDinheiroJoga)
             val jogador = Jogador(nomeJogador,DinheiroJoga , idJogador)
 
             return Moeda_ao_Ar(Ultima_jogada, Acertou, Falhou, jogador, id)
