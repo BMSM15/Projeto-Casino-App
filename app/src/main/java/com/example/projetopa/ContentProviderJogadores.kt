@@ -62,12 +62,12 @@ class ContentProviderJogadores : ContentProvider() {
         val cursor = when (getUriMatcher().match(uri)){
         URI_JOGADORES -> TabelaBDJogador(db).query(colunas, selection, argsSeleccao, null, null, sortOrder)
         URI_ROLETA -> TabelaBDRoleta(db).query(colunas, selection, argsSeleccao, null, null, sortOrder)
+        URI_MOEDA_AO_AR -> TabelaBDMoedaAoAR(db).query(colunas, selection, argsSeleccao, null, null, sortOrder)
         URI_JOGADOR_ESPECIFICO -> TabelaBDJogador(db).query(colunas, "${BaseColumns._ID}=?", arrayOf("${id}"), null, null, null)
         URI_ROLETA_ESPECIFICA -> TabelaBDRoleta(db).query(colunas, "${BaseColumns._ID}=?", arrayOf("${id}"), null, null, null)
         URI_MOEDA_AO_AR_ESPECIFICA -> TabelaBDMoedaAoAR(db).query(colunas, "${BaseColumns._ID}=?", arrayOf("${id}"), null, null, null)
         else -> null
         }
-        db.close()
 
         return cursor
 
@@ -196,8 +196,6 @@ class ContentProviderJogadores : ContentProvider() {
             else -> -1
         }
 
-        db.close()
-
         if (id == -1L) return null
 
         return Uri.withAppendedPath(uri, "$id")
@@ -238,8 +236,6 @@ class ContentProviderJogadores : ContentProvider() {
             else -> 0
         }
 
-        db.close()
-
         return registosApagados
     }
 
@@ -277,8 +273,6 @@ class ContentProviderJogadores : ContentProvider() {
             else -> 0
         }
 
-        db.close()
-
         return registosAlterados
     }
 
@@ -303,6 +297,8 @@ class ContentProviderJogadores : ContentProvider() {
         fun getUriMatcher() : UriMatcher {
             var uriMatcher = UriMatcher(UriMatcher.NO_MATCH)
 
+            uriMatcher.addURI(AUTHORITY, TabelaBDMoedaAoAR.NOME, URI_MOEDA_AO_AR)
+            uriMatcher.addURI(AUTHORITY, "${TabelaBDMoedaAoAR.NOME}/#", URI_MOEDA_AO_AR_ESPECIFICA)
             uriMatcher.addURI(AUTHORITY, TabelaBDRoleta.NOME, URI_ROLETA)
             uriMatcher.addURI(AUTHORITY, "${TabelaBDRoleta.NOME}/#", URI_ROLETA_ESPECIFICA)
             uriMatcher.addURI(AUTHORITY, TabelaBDJogador.NOME, URI_JOGADORES)
