@@ -7,32 +7,47 @@
     tools:context=".MenuPricipalFragment">
 
     <Button
-        android:id="@+id/buttonRoleta"
-        android:layout_width="388dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Roleta"
+        android:id="@+id/buttonJogador"
+        android:layout_width="283dp"
+        android:layout_height="91dp"
+        android:text="Jogador"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCasino"
+        app:layout_constraintVertical_bias="0.303" />
+
+    <TextView
+        android:id="@+id/textViewCasino"
+        android:layout_width="184dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="400dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:lineSpacingExtra="8sp"
+        android:text="Casino"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#EF0808"
+        android:textSize="48sp"
+        android:textStyle="italic"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonJogador"
-        android:layout_width="380dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Jogador"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="276dp"
+        android:layout_height="269dp"
+        android:layout_marginTop="84dp"
+        android:src="@drawable/wheel"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCasino"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRoleta" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
