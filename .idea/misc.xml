@@ -4,14 +4,26 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/drawable/ic_add.xml" value="0.1835" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/activity_insert_data.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/content_main.xml" value="0.2359375" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/fragment_editar_joga.xml" value="0.25" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/fragment_eliminar_joga.xml" value="0.175" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/fragment_first.xml" value="0.2359375" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/fragment_inserir_joga.xml" value="0.1609375" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/fragment_lista_jogadores.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/fragment_menuprincipal.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/fragment_second.xml" value="0.2359375" />
-        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/jogo_roleta.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/item_jogador.xml" value="0.264" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/jogo_roleta.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/layout/menu_edicao.xml" value="0.175" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/menu/menu_edicao.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/menu/menu_eliminar.xml" value="0.1" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/menu/menu_lista.xml" value="0.175" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/menu/menu_main.xml" value="0.25" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/ProjetoPA/app/src/main/res/xml/root_preferences.xml" value="0.264" />
       </map>
     </option>
   </component>

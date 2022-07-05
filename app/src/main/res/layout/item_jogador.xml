@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/textViewJogador"
@@ -23,12 +23,13 @@
 
 
     <TextView
+        android:id="@+id/textViewDinheiro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:text="1500"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="@+id/textViewJogador"
         app:layout_constraintStart_toStartOf="@+id/textViewJogador"
-        app:layout_constraintTop_toBottomOf="@+id/textViewJogador"
-        android:text="1500"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewJogador" />
 </androidx.constraintlayout.widget.ConstraintLayout>
