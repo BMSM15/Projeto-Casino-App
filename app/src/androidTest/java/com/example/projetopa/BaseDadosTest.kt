@@ -1,7 +1,6 @@
 package com.example.projetopa
 
 import android.database.sqlite.SQLiteDatabase
-import android.provider.BaseColumns
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert.*
@@ -49,11 +48,70 @@ class BaseDadosTest {
     fun consegueInserirJogador() {
         val db = getWritableDatabase()
 
-        val jogador = Jogador("Bruno", 1500)
-        insereJogador(db, jogador)
+        insereJogador(db, Jogador("Luís", "755"))
 
         db.close()
     }
 
 
+    @Test
+    fun consegueAlterarJogador() {
+        val db = getWritableDatabase()
+
+        val jogador = Jogador("Maria", "350")
+        insereJogador(db, jogador)
+
+        jogador.Nome_jogador = "Albertino"
+        jogador.Dinheiro = "630"
+        val registosAlterados = TabelaBDJogador(db).update(
+            jogador.toContentValues(),
+            "${TabelaBDJogador.CAMPO_ID}=?",
+            arrayOf("${jogador.id}")
+        )
+
+        assertEquals(1, registosAlterados)
+
+        db.close()
+    }
+
+    @Test
+    fun consegueEliminarJogador() {
+        val db = getWritableDatabase()
+
+        val jogador = Jogador("Ana", "100")
+        insereJogador(db, jogador)
+
+        val registosEliminados = TabelaBDJogador(db).delete(
+            "${TabelaBDJogador.CAMPO_ID}=?",
+            arrayOf("${jogador.id}"))
+
+        assertEquals(1, registosEliminados)
+
+        db.close()
+    }
+
+    @Test
+    fun consegueLerJogador() {
+        val db = getWritableDatabase()
+
+        val jogador = Jogador("Vanessa", "1500")
+        insereJogador(db, jogador)
+
+        val cursor = TabelaBDJogador(db).query(
+            TabelaBDJogador.TODAS_COLUNAS,
+            "${TabelaBDJogador.CAMPO_ID}=?",
+            arrayOf("${jogador.id}"),
+            null,
+            null,
+            null
+        )
+
+        assertEquals(1, cursor.count)
+        assertTrue(cursor.moveToNext())
+
+        val categoriaBD = Jogador.fromCursor(cursor)
+        assertEquals(jogador, categoriaBD)
+
+        db.close()
+    }
 }
